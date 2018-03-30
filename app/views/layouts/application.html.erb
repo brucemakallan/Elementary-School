@@ -13,7 +13,7 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar">
 
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -26,20 +26,20 @@
 			
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
+					<li class="nav-item <%= "active".html_safe if request.env['PATH_INFO'] == "/home" %>">
 						<%= link_to "Home", home_path, class: "nav-link" %>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item <%= "active".html_safe if request.env['PATH_INFO'] == "/about" %>">
 						<%= link_to "About", about_path, class: "nav-link" %>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item <%= "active".html_safe if request.env['PATH_INFO'] == "/gallery" %>">
 						<%= link_to "Gallery", gallery_path, class: "nav-link" %>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item <%= "active".html_safe if request.env['PATH_INFO'] == "/admissions" %>">
 						<%= link_to "Admissions", admissions_path, class: "nav-link" %>
 					</li>
-					<li class="nav-item">
-						<%= link_to "Contact", contact_path, class: "nav-link" %>
+					<li class="nav-item <%= "active".html_safe if request.env['PATH_INFO'] == "/contact" %>">
+						<%= link_to "Contact", home_path + "#contact", class: "nav-link" %>
 					</li>
 				</ul>
 			</div>
@@ -50,10 +50,38 @@
 
 		<%= yield %>
 
-		<!-- FOOTER -->
+		<div class="container-fluid contacts-section black-bg" id="contact">
+			<div class="row">
+				<div class="col-sm-3 largepadding">
+					<h4 class="accentcolor">GET IN TOUCH</h4>
+					Elementary School,<br>
+					P.O Box 1234,<br>
+					Kampala, Uganda<br>
+					Plot 1234 Kampala.<br><br>
+					<%= fa_icon "envelope" %>  <a href="mailto:elementary@gmail.com">elementary@gmail.com</a><br>
+					<%= fa_icon "phone" %>  <a href="tel:+256781445566">+256-781-445566</a>
+				</div>
+				<div class="col-sm-3 largepadding">
+					<h4 class="accentcolor">WORKING HOURS</h4>
+					Mon - Fri: 8am to 5pm<br>
+					Sat - Sun: Closed<br>
+					School Holidays: 9am - 2pm<br>
+					Public Holidays: Closed<br>
+				</div>
+				<div class="col-sm-3 largepadding">
+					<i>You can teach students a lesson for a day; but if you can teach them to learn by creating curiosity, they will continue the learning process as long as they live.</i><br><br>
+					<small>Clay P. Bedford</small>
+				</div>
+				<div class="col-sm-3">
+					<%= image_tag "blackkid.jpg", alt: "Image" %>
+				</div>
+			</div>
+		</div>
+
+		<!-- Copyright -->
 		<footer class="container">
-			<p class="float-right"><a href="#">Back to top</a></p>
-			<p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+			<p class="float-right"><a href="#">&uarr; Back to top</a></p>
+			<p>&copy; <%= Time.now.year %> Elementary School. All Rights Reserved. Developed by: <a target="_blank" href="http://iviidev.info">The iVii Development Team</a></p>
 		</footer>
 	</main>
 </body>

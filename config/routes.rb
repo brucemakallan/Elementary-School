@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 	get 'about', to: 'pages#about'
 	get 'gallery', to: 'pages#gallery'
 	get 'admissions', to: 'pages#admissions'
-	get 'contact', to: 'pages#contact'
 
 	root to: 'pages#home'
 

@@ -4,16 +4,69 @@
 @import url('https://fonts.googleapis.com/css?family=Spinnaker');
 
 $spinnaker: 'Spinnaker', sans-serif;
-$accent_color: #FF9900;
-$primary_color: #43C6DB;
+$accent_color: #C0CA33;
+$primary_color: #004D40;
 
 
 body {
+	font-family: $spinnaker;
 	padding-top: 3rem;
   padding-bottom: 3rem;
   color: #5a5a5a;
 }
+h1, h2, h3, h4, h5, h6 {
+	font-family: $spinnaker;
+	color: $primary_color;
+}
+h1, h2 {
+	line-height: 100px;
+	letter-spacing: -1px;
+}
+h1 {
+	font-size: 100px;
+}
+h2 {
+	font-size: 50px;
+}
+p {
+	font-family: $spinnaker;
+	font-size: 16px;
+	line-height: 28px;
+	font-weight: 400;
+	letter-spacing: -0.3px;
+	color: #63667a;
+}
+.white {
+	color: white;
+}
+.blueish {
+	color: #00aaaa;
+}
+.primarycolor {
+	color: $primary_color;
+}
+.accentcolor {
+	color: $accent_color;
+}
+.largepadding {
+	padding: 50px 15px;
+} 
+.black-bg {
+	background-color: #010101;
+	color: #bbb;	
+}
 
+
+.nav-link {
+	padding-right: 1.5rem !important;
+	padding-left: 1.5rem !important;
+}
+
+.profile_pic {
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin-bottom: 10px;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -26,6 +79,8 @@ body {
 .carousel-caption {
   bottom: 3rem;
   z-index: 10;
+  color: $accent_color;
+  font-size: 100px;
 }
 
 /* Declare heights because of positioning of img element */
@@ -38,7 +93,6 @@ body {
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 32rem;
 }
 
 
@@ -94,4 +148,112 @@ body {
   .featurette-heading {
     margin-top: 7rem;
   }
+}
+
+
+/* CONTACTS FOOTER
+-------------------------------------------------- */
+.contacts-section {
+	margin-bottom: 30px;
+
+	a {
+		color: aqua;
+	}
+	a:visited {
+		color: aqua;	
+	}
+} 
+
+
+
+/* GALLERY
+-------------------------------------------------- */
+.gallery-section {
+	* {
+	  box-sizing: border-box;
+	}
+
+	/* Position the image container (needed to position the left and right arrows) */
+	.container {
+	  position: relative;
+	}
+
+	/* Hide the images by default */
+	.mySlides {
+	  display: none;
+	}
+
+	/* Add a pointer when hovering over the thumbnail images */
+	.cursor {
+	  cursor: pointer;
+	}
+
+	/* Next & previous buttons */
+	.prev,
+	.next {
+	  cursor: pointer;
+	  position: absolute;
+	  top: 20%;
+	  width: auto;
+	  padding: 16px;
+	  margin-top: -50px;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 20px;
+	  border-radius: 0 3px 3px 0;
+	  user-select: none;
+	  -webkit-user-select: none;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+	  /*right: 0;*/
+	  top: 30%;
+	  border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover,
+	.next:hover {
+	  background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+	  color: #f2f2f2;
+	  font-size: 12px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  top: 0;
+	}
+
+	/* Container for image text */
+	.caption-container {
+	  text-align: center;
+	  background-color: #222;
+	  padding: 2px 16px;
+	  color: white;
+	}
+
+	.row:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+
+	/* Six columns side by side */
+	.column {
+	  float: left;
+	  width: 16.66%;
+	}
+
+	/* Add a transparency effect for thumnbail images */
+	.demo {
+	  opacity: 0.6;
+	}
+
+	.active,
+	.demo:hover {
+	  opacity: 1;
+	}
 }
